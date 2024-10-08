@@ -1,9 +1,7 @@
 package cleancode.studycafe.mine;
 
 import cleancode.studycafe.mine.exception.AppException;
-import cleancode.studycafe.mine.io.InputHandler;
-import cleancode.studycafe.mine.io.OutputHandler;
-import cleancode.studycafe.mine.io.StudyCafeFileHandler;
+import cleancode.studycafe.mine.io.*;
 import cleancode.studycafe.mine.model.StudyCafeLockerPass;
 import cleancode.studycafe.mine.model.StudyCafePass;
 import cleancode.studycafe.mine.model.StudyCafePassType;
@@ -12,16 +10,19 @@ import java.util.List;
 
 public class StudyCafePassMachine {
 
-    private final InputHandler inputHandler = new InputHandler();
-    private final OutputHandler outputHandler = new OutputHandler();
+    private final InputHandler inputHandler;
+    private final OutputHandler outputHandler;
+
+    public StudyCafePassMachine(InputHandler inputHandler, OutputHandler outputHandler) {
+        this.inputHandler = inputHandler;
+        this.outputHandler = outputHandler;
+    }
 
     public void run() {
         try {
-            outputHandler.showWelcomeMessage();
-            outputHandler.showAnnouncement();
+            showWelcomeMessageToUser();
 
-            outputHandler.askPassTypeSelection();
-            StudyCafePassType studyCafePassType = inputHandler.getPassTypeSelectingUserAction();
+            StudyCafePassType studyCafePassType = askPassTypeSelectionToUser();
 
             if (studyCafePassType == StudyCafePassType.HOURLY) {
                 StudyCafeFileHandler studyCafeFileHandler = new StudyCafeFileHandler();
@@ -78,4 +79,13 @@ public class StudyCafePassMachine {
         }
     }
 
+    private StudyCafePassType askPassTypeSelectionToUser() {
+        outputHandler.askPassTypeSelection();
+        return inputHandler.getPassTypeSelectingUserAction();
+    }
+
+    private void showWelcomeMessageToUser() {
+        outputHandler.showWelcomeMessage();
+        outputHandler.showAnnouncement();
+    }
 }
