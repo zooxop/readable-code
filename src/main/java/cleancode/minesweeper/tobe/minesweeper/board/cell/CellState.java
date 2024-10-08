@@ -13,7 +13,6 @@ public class CellState {
         return new CellState(false, false);
     }
 
-
     public void flag() {
         this.isFlagged = true;
     }
