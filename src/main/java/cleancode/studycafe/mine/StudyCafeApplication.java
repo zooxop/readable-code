@@ -1,17 +1,15 @@
 package cleancode.studycafe.mine;
 
-import cleancode.studycafe.mine.io.ConsoleInputHandler;
-import cleancode.studycafe.mine.io.ConsoleOutputHandler;
-import cleancode.studycafe.mine.io.InputHandler;
-import cleancode.studycafe.mine.io.OutputHandler;
+import cleancode.studycafe.mine.io.*;
 
 public class StudyCafeApplication {
 
     public static void main(String[] args) {
         InputHandler inputHandler = new ConsoleInputHandler();
         OutputHandler outputHandler = new ConsoleOutputHandler();
+        FileHandler fileHandler = new StudyCafeFileHandler();
 
-        StudyCafePassMachine studyCafePassMachine = new StudyCafePassMachine(inputHandler, outputHandler);
+        StudyCafePassMachine studyCafePassMachine = new StudyCafePassMachine(inputHandler, outputHandler, fileHandler);
         studyCafePassMachine.run();
     }
 
