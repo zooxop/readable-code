@@ -1,8 +1,8 @@
 package cleancode.studycafe.mine.io;
 
-import cleancode.studycafe.mine.exception.AppException;
 import cleancode.studycafe.mine.model.pass.StudyCafePass;
-import cleancode.studycafe.mine.model.pass.StudyCafePassType;
+import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
+import cleancode.studycafe.mine.model.pass.type.StudyCafePassTypeFinder;
 
 import java.util.List;
 import java.util.Scanner;
@@ -14,17 +14,7 @@ public class ConsoleInputHandler implements InputHandler {
     @Override
     public StudyCafePassType getPassTypeSelectingUserAction() {
         String userInput = SCANNER.nextLine();
-
-        if ("1".equals(userInput)) {
-            return StudyCafePassType.HOURLY;
-        }
-        if ("2".equals(userInput)) {
-            return StudyCafePassType.WEEKLY;
-        }
-        if ("3".equals(userInput)) {
-            return StudyCafePassType.FIXED;
-        }
-        throw new AppException("잘못된 입력입니다.");
+        return StudyCafePassTypeFinder.findPassType(userInput);
     }
 
     @Override

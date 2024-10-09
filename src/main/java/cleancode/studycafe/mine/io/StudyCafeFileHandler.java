@@ -3,7 +3,7 @@ package cleancode.studycafe.mine.io;
 import cleancode.studycafe.mine.model.StudyCafeLockerPass;
 import cleancode.studycafe.mine.model.pass.StudyCafePass;
 import cleancode.studycafe.mine.model.pass.StudyCafePassFactory;
-import cleancode.studycafe.mine.model.pass.StudyCafePassType;
+import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
 
 import java.io.IOException;
 import java.nio.file.Files;

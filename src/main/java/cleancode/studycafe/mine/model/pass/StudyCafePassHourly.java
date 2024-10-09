@@ -1,5 +1,7 @@
 package cleancode.studycafe.mine.model.pass;
 
+import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
+
 public class StudyCafePassHourly implements StudyCafePass {
     StudyCafePassState studyCafePassState;
 

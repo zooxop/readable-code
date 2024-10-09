@@ -1,6 +1,6 @@
 package cleancode.studycafe.mine.model;
 
-import cleancode.studycafe.mine.model.pass.StudyCafePassType;
+import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
 
 public class StudyCafeLockerPass {
 

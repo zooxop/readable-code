@@ -1,5 +1,7 @@
 package cleancode.studycafe.mine.model.pass;
 
+import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
+
 public class StudyCafePassFixed implements StudyCafePass {
     StudyCafePassState studyCafePassState;
 

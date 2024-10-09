@@ -4,7 +4,7 @@ import cleancode.studycafe.mine.exception.AppException;
 import cleancode.studycafe.mine.io.*;
 import cleancode.studycafe.mine.model.StudyCafeLockerPass;
 import cleancode.studycafe.mine.model.pass.StudyCafePass;
-import cleancode.studycafe.mine.model.pass.StudyCafePassType;
+import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
 
 import java.util.List;
 
@@ -36,6 +36,22 @@ public class StudyCafePassMachine {
         }
     }
 
+    private void showWelcomeMessageToUser() {
+        outputHandler.showWelcomeMessage();
+        outputHandler.showAnnouncement();
+    }
+
+    private StudyCafePassType askPassTypeSelectionInputToUser() {
+        outputHandler.askPassTypeSelection();
+        return inputHandler.getPassTypeSelectingUserAction();
+    }
+
+    private StudyCafePass getSelectedPassInputFromUser(StudyCafePassType studyCafePassType) {
+        List<StudyCafePass> passes = getStudyCafePassesInputFromUser(studyCafePassType);
+        outputHandler.showPassListForSelection(passes);
+        return inputHandler.getSelectPass(passes);
+    }
+
     private StudyCafeLockerPass getSelectedLockerPassInputFromUser(StudyCafePass selectedPass) {
         if (selectedPass.getPassType() != StudyCafePassType.FIXED) {
             return null;
@@ -47,12 +63,6 @@ public class StudyCafePassMachine {
             return null;
         }
         return lockerPass;
-    }
-
-    private StudyCafePass getSelectedPassInputFromUser(StudyCafePassType studyCafePassType) {
-        List<StudyCafePass> passes = getStudyCafePassesInputFromUser(studyCafePassType);
-        outputHandler.showPassListForSelection(passes);
-        return inputHandler.getSelectPass(passes);
     }
 
     private StudyCafeLockerPass findSelectedLockerPassFromFile(StudyCafePass selectedPass) {
@@ -71,15 +81,5 @@ public class StudyCafePassMachine {
         return studyCafePasses.stream()
             .filter(studyCafePass -> studyCafePass.getPassType() == studyCafePassType)
             .toList();
-    }
-
-    private StudyCafePassType askPassTypeSelectionInputToUser() {
-        outputHandler.askPassTypeSelection();
-        return inputHandler.getPassTypeSelectingUserAction();
-    }
-
-    private void showWelcomeMessageToUser() {
-        outputHandler.showWelcomeMessage();
-        outputHandler.showAnnouncement();
     }
 }
