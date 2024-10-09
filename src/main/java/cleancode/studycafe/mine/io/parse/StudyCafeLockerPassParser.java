@@ -1,6 +1,6 @@
 package cleancode.studycafe.mine.io.parse;
 
-import cleancode.studycafe.mine.model.StudyCafeLockerPass;
+import cleancode.studycafe.mine.model.pass.StudyCafeLockerPass;
 import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
 
 public class StudyCafeLockerPassParser implements FileParser<StudyCafeLockerPass> {

@@ -1,4 +1,4 @@
-package cleancode.studycafe.mine.model;
+package cleancode.studycafe.mine.model.pass;
 
 import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
 

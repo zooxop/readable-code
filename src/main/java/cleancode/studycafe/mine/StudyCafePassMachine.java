@@ -2,7 +2,7 @@ package cleancode.studycafe.mine;
 
 import cleancode.studycafe.mine.exception.AppException;
 import cleancode.studycafe.mine.io.*;
-import cleancode.studycafe.mine.model.StudyCafeLockerPass;
+import cleancode.studycafe.mine.model.pass.StudyCafeLockerPass;
 import cleancode.studycafe.mine.model.pass.StudyCafePass;
 import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
 
