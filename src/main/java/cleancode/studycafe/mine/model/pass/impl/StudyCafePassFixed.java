@@ -1,9 +1,11 @@
-package cleancode.studycafe.mine.model.pass;
+package cleancode.studycafe.mine.model.pass.impl;
 
+import cleancode.studycafe.mine.model.pass.StudyCafePass;
+import cleancode.studycafe.mine.model.pass.StudyCafePassState;
 import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
 
 public class StudyCafePassFixed implements StudyCafePass {
-    StudyCafePassState studyCafePassState;
+    private final StudyCafePassState studyCafePassState;
 
     private StudyCafePassFixed(StudyCafePassState studyCafePassState) {
         this.studyCafePassState = studyCafePassState;
