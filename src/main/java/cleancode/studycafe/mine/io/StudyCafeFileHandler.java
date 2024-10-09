@@ -1,8 +1,9 @@
 package cleancode.studycafe.mine.io;
 
 import cleancode.studycafe.mine.model.StudyCafeLockerPass;
-import cleancode.studycafe.mine.model.StudyCafePass;
-import cleancode.studycafe.mine.model.StudyCafePassType;
+import cleancode.studycafe.mine.model.pass.StudyCafePass;
+import cleancode.studycafe.mine.model.pass.StudyCafePassFactory;
+import cleancode.studycafe.mine.model.pass.StudyCafePassType;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -24,7 +25,7 @@ public class StudyCafeFileHandler implements FileHandler {
                 int price = Integer.parseInt(values[2]);
                 double discountRate = Double.parseDouble(values[3]);
 
-                StudyCafePass studyCafePass = StudyCafePass.of(studyCafePassType, duration, price, discountRate);
+                StudyCafePass studyCafePass = StudyCafePassFactory.createStudyCafePass(studyCafePassType, duration, price, discountRate);
                 studyCafePasses.add(studyCafePass);
             }
 

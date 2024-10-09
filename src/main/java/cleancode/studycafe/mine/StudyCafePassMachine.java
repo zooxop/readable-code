@@ -3,8 +3,8 @@ package cleancode.studycafe.mine;
 import cleancode.studycafe.mine.exception.AppException;
 import cleancode.studycafe.mine.io.*;
 import cleancode.studycafe.mine.model.StudyCafeLockerPass;
-import cleancode.studycafe.mine.model.StudyCafePass;
-import cleancode.studycafe.mine.model.StudyCafePassType;
+import cleancode.studycafe.mine.model.pass.StudyCafePass;
+import cleancode.studycafe.mine.model.pass.StudyCafePassType;
 
 import java.util.List;
 
@@ -21,12 +21,12 @@ public class StudyCafePassMachine {
     }
 
     public void run() {
-        try {
-            showWelcomeMessageToUser();
+        showWelcomeMessageToUser();
 
+        try {
             StudyCafePassType studyCafePassType = askPassTypeSelectionInputToUser();
             StudyCafePass selectedPass = getSelectedPassInputFromUser(studyCafePassType);
-            StudyCafeLockerPass lockerPass = getSelectedLockerPassInputFromUser(studyCafePassType, selectedPass);
+            StudyCafeLockerPass lockerPass = getSelectedLockerPassInputFromUser(selectedPass);
 
             outputHandler.showPassOrderSummary(selectedPass, lockerPass);
         } catch (AppException e) {
@@ -36,11 +36,11 @@ public class StudyCafePassMachine {
         }
     }
 
-    private StudyCafeLockerPass getSelectedLockerPassInputFromUser(StudyCafePassType studyCafePassType, StudyCafePass selectedPass) {
-        if (studyCafePassType != StudyCafePassType.FIXED) {
+    private StudyCafeLockerPass getSelectedLockerPassInputFromUser(StudyCafePass selectedPass) {
+        if (selectedPass.getPassType() != StudyCafePassType.FIXED) {
             return null;
         }
-        StudyCafeLockerPass lockerPass = getSelectedLockerPassInputFromUser(selectedPass);
+        StudyCafeLockerPass lockerPass = findSelectedLockerPassFromFile(selectedPass);
         outputHandler.askLockerPass(lockerPass);
 
         if (!inputHandler.getLockerSelection()) {
@@ -55,7 +55,7 @@ public class StudyCafePassMachine {
         return inputHandler.getSelectPass(passes);
     }
 
-    private StudyCafeLockerPass getSelectedLockerPassInputFromUser(StudyCafePass selectedPass) {
+    private StudyCafeLockerPass findSelectedLockerPassFromFile(StudyCafePass selectedPass) {
         List<StudyCafeLockerPass> lockerPasses = fileHandler.readLockerPasses();
         return lockerPasses.stream()
             .filter(option ->

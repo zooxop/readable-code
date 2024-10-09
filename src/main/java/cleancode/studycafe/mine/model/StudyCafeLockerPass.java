@@ -1,5 +1,7 @@
 package cleancode.studycafe.mine.model;
 
+import cleancode.studycafe.mine.model.pass.StudyCafePassType;
+
 public class StudyCafeLockerPass {
 
     private final StudyCafePassType passType;
@@ -29,16 +31,7 @@ public class StudyCafeLockerPass {
     }
 
     public String display() {
-        if (passType == StudyCafePassType.HOURLY) {
-            return String.format("%s시간권 - %d원", duration, price);
-        }
-        if (passType == StudyCafePassType.WEEKLY) {
-            return String.format("%s주권 - %d원", duration, price);
-        }
-        if (passType == StudyCafePassType.FIXED) {
-            return String.format("%s주권 - %d원", duration, price);
-        }
-        return "";
+        return String.format("%s주권 - %d원", duration, price);  // FIXME: passType 따라 display 내용 바뀌도록 추상화 필요
     }
 
 }
