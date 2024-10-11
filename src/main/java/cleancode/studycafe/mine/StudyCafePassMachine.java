@@ -73,11 +73,11 @@ public class StudyCafePassMachine {
 
     private List<StudyCafePass> getStudyCafePassesInputFromUser(StudyCafePassType studyCafePassType) {
         StudyCafePasses studyCafePasses = StudyCafePasses.of(fileHandler.readStudyCafePasses());
-        return studyCafePasses.filterByPassType(studyCafePassType);
+        return studyCafePasses.filterBy(studyCafePassType);
     }
 
     private StudyCafeLockerPass findSelectedLockerPassFromFile(StudyCafePass selectedPass) {
         StudyCafeLockerPasses lockerPasses = StudyCafeLockerPasses.of(fileHandler.readLockerPasses());
-        return lockerPasses.findBySelectedPass(selectedPass);
+        return lockerPasses.findBy(selectedPass);
     }
 }

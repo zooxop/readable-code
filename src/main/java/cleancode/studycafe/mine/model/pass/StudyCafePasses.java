@@ -16,7 +16,7 @@ public class StudyCafePasses {
         return new StudyCafePasses(passes);
     }
 
-    public List<StudyCafePass> filterByPassType(StudyCafePassType studyCafePassType) {
+    public List<StudyCafePass> filterBy(StudyCafePassType studyCafePassType) {
         List<StudyCafePass> studyCafePasses = new ArrayList<>(passes);
 
         return studyCafePasses.stream()

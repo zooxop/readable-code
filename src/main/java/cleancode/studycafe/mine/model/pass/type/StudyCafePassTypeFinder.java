@@ -4,6 +4,9 @@ import cleancode.studycafe.mine.exception.AppException;
 
 public class StudyCafePassTypeFinder {
 
+    private StudyCafePassTypeFinder() {
+    }
+
     public static StudyCafePassType findPassType(String userInput) {
         if ("1".equals(userInput)) {
             return StudyCafePassType.HOURLY;

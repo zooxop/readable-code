@@ -14,14 +14,11 @@ public class StudyCafeLockerPasses {
         return new StudyCafeLockerPasses(lockerPasses);
     }
 
-    public StudyCafeLockerPass findBySelectedPass(StudyCafePass selectedPass) {
+    public StudyCafeLockerPass findBy(StudyCafePass pass) {
         List<StudyCafeLockerPass> passes = new ArrayList<>(lockerPasses);
 
         return passes.stream()
-            .filter(option ->
-                option.isSameType(selectedPass.getPassType())
-                    && option.isSameDuration(selectedPass.getDuration())
-            )
+            .filter(lockerPass -> lockerPass.isSameTypeAndDuration(pass.getPassType(), pass.getDuration()))
             .findFirst()
             .orElseGet(StudyCafeLockerPass::ofNone);
     }
