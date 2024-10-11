@@ -1,6 +1,6 @@
-package cleancode.studycafe.mine.model.pass;
+package cleancode.studycafe.mine.studycafe.model.pass;
 
-import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
+import cleancode.studycafe.mine.studycafe.model.pass.type.StudyCafePassType;
 
 public interface StudyCafePass {
 

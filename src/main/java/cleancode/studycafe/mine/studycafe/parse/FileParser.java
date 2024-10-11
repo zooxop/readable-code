@@ -1,4 +1,4 @@
-package cleancode.studycafe.mine.io.parse;
+package cleancode.studycafe.mine.studycafe.parse;
 
 public interface FileParser<T> {
     T parse(String[] values);

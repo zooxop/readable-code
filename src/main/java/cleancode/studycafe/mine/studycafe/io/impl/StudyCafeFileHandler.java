@@ -1,10 +1,11 @@
-package cleancode.studycafe.mine.io;
+package cleancode.studycafe.mine.studycafe.io.impl;
 
-import cleancode.studycafe.mine.io.parse.FileParser;
-import cleancode.studycafe.mine.io.parse.StudyCafeLockerPassParser;
-import cleancode.studycafe.mine.io.parse.StudyCafePassParser;
-import cleancode.studycafe.mine.model.pass.StudyCafeLockerPass;
-import cleancode.studycafe.mine.model.pass.StudyCafePass;
+import cleancode.studycafe.mine.studycafe.io.FileHandler;
+import cleancode.studycafe.mine.studycafe.parse.FileParser;
+import cleancode.studycafe.mine.studycafe.parse.StudyCafeLockerPassParser;
+import cleancode.studycafe.mine.studycafe.parse.StudyCafePassParser;
+import cleancode.studycafe.mine.studycafe.model.pass.StudyCafeLockerPass;
+import cleancode.studycafe.mine.studycafe.model.pass.StudyCafePass;
 
 import java.io.IOException;
 import java.nio.file.Files;

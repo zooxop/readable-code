@@ -1,8 +1,8 @@
-package cleancode.studycafe.mine.model.pass.impl;
+package cleancode.studycafe.mine.studycafe.model.pass.impl;
 
-import cleancode.studycafe.mine.model.pass.StudyCafePass;
-import cleancode.studycafe.mine.model.pass.StudyCafePassState;
-import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
+import cleancode.studycafe.mine.studycafe.model.pass.StudyCafePass;
+import cleancode.studycafe.mine.studycafe.model.pass.StudyCafePassState;
+import cleancode.studycafe.mine.studycafe.model.pass.type.StudyCafePassType;
 
 public class StudyCafePassWeekly implements StudyCafePass {
     StudyCafePassState studyCafePassState;

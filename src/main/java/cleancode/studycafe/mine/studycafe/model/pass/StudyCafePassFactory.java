@@ -1,9 +1,9 @@
-package cleancode.studycafe.mine.model.pass;
+package cleancode.studycafe.mine.studycafe.model.pass;
 
-import cleancode.studycafe.mine.model.pass.impl.StudyCafePassFixed;
-import cleancode.studycafe.mine.model.pass.impl.StudyCafePassHourly;
-import cleancode.studycafe.mine.model.pass.impl.StudyCafePassWeekly;
-import cleancode.studycafe.mine.model.pass.type.StudyCafePassType;
+import cleancode.studycafe.mine.studycafe.model.pass.impl.StudyCafePassFixed;
+import cleancode.studycafe.mine.studycafe.model.pass.impl.StudyCafePassHourly;
+import cleancode.studycafe.mine.studycafe.model.pass.impl.StudyCafePassWeekly;
+import cleancode.studycafe.mine.studycafe.model.pass.type.StudyCafePassType;
 
 public class StudyCafePassFactory {
     private StudyCafePassFactory() {

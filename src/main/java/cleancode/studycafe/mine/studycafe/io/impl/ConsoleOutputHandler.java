@@ -1,7 +1,8 @@
-package cleancode.studycafe.mine.io;
+package cleancode.studycafe.mine.studycafe.io.impl;
 
-import cleancode.studycafe.mine.model.pass.StudyCafeLockerPass;
-import cleancode.studycafe.mine.model.pass.StudyCafePass;
+import cleancode.studycafe.mine.studycafe.io.OutputHandler;
+import cleancode.studycafe.mine.studycafe.model.pass.StudyCafeLockerPass;
+import cleancode.studycafe.mine.studycafe.model.pass.StudyCafePass;
 
 import java.util.List;
 

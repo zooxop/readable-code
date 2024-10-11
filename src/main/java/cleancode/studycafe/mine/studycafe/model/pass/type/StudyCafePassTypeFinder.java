@@ -1,6 +1,6 @@
-package cleancode.studycafe.mine.model.pass.type;
+package cleancode.studycafe.mine.studycafe.model.pass.type;
 
-import cleancode.studycafe.mine.exception.AppException;
+import cleancode.studycafe.mine.studycafe.exception.AppException;
 
 public class StudyCafePassTypeFinder {
 

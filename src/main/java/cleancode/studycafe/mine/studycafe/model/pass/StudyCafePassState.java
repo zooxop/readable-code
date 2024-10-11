@@ -1,4 +1,4 @@
-package cleancode.studycafe.mine.model.pass;
+package cleancode.studycafe.mine.studycafe.model.pass;
 
 public class StudyCafePassState {
     private int duration;
