@@ -34,9 +34,4 @@ public class StudyCafePassHourly implements StudyCafePass {
     public double getDiscountRate() {
         return studyCafePassState.getDiscountRate();
     }
-
-    @Override
-    public String display() {
-        return String.format("%s시간권 - %d원", studyCafePassState.getDuration(), studyCafePassState.getPrice());
-    }
 }

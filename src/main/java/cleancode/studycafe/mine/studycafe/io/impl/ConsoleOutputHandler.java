@@ -32,7 +32,7 @@ public class ConsoleOutputHandler implements OutputHandler {
         System.out.println("이용권 목록");
         for (int index = 0; index < passes.size(); index++) {
             StudyCafePass pass = passes.get(index);
-            System.out.println(String.format("%s. ", index + 1) + pass.display());
+            System.out.println(String.format("%s. ", index + 1) + createPassInformationStr(pass));
         }
     }
 
@@ -52,7 +52,7 @@ public class ConsoleOutputHandler implements OutputHandler {
     public void showPassOrderSummary(StudyCafePass selectedPass, StudyCafeLockerPass lockerPass) {
         System.out.println();
         System.out.println("이용 내역");
-        System.out.println("이용권: " + selectedPass.display());
+        System.out.println("이용권: " + createPassInformationStr(selectedPass));
         if (lockerPass.isSelected()) {
             System.out.println("사물함: " + lockerPass.display());
         }
@@ -71,5 +71,16 @@ public class ConsoleOutputHandler implements OutputHandler {
     @Override
     public void showSimpleMessage(String message) {
         System.out.println(message);
+    }
+
+    private String createPassInformationStr(StudyCafePass pass) {
+        int duration = pass.getDuration();
+        int price = pass.getPrice();
+
+        return switch (pass.getPassType()) {
+            case HOURLY -> String.format("%s시간권 - %d원", duration, price);
+            case WEEKLY, FIXED -> String.format("%s주권 - %d원", duration, price);
+            case NONE -> "";
+        };
     }
 }

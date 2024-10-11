@@ -11,6 +11,4 @@ public interface StudyCafePass {
     int getPrice();
 
     double getDiscountRate();
-
-    String display();
 }

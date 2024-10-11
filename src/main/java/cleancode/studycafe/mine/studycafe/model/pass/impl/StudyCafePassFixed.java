@@ -35,7 +35,6 @@ public class StudyCafePassFixed implements StudyCafePass {
         return studyCafePassState.getDiscountRate();
     }
 
-    @Override
     public String display() {
         return String.format("%s주권 - %d원", studyCafePassState.getDuration(), studyCafePassState.getPrice());
     }

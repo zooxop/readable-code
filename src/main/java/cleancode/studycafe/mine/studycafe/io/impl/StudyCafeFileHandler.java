@@ -2,8 +2,8 @@ package cleancode.studycafe.mine.studycafe.io.impl;
 
 import cleancode.studycafe.mine.studycafe.io.FileHandler;
 import cleancode.studycafe.mine.studycafe.parse.FileParser;
-import cleancode.studycafe.mine.studycafe.parse.StudyCafeLockerPassParser;
-import cleancode.studycafe.mine.studycafe.parse.StudyCafePassParser;
+import cleancode.studycafe.mine.studycafe.parse.impl.StudyCafeLockerPassParser;
+import cleancode.studycafe.mine.studycafe.parse.impl.StudyCafePassParser;
 import cleancode.studycafe.mine.studycafe.model.pass.StudyCafeLockerPass;
 import cleancode.studycafe.mine.studycafe.model.pass.StudyCafePass;
 

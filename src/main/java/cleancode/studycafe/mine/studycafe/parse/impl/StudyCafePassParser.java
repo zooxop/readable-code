@@ -1,8 +1,9 @@
-package cleancode.studycafe.mine.studycafe.parse;
+package cleancode.studycafe.mine.studycafe.parse.impl;
 
 import cleancode.studycafe.mine.studycafe.model.pass.StudyCafePass;
 import cleancode.studycafe.mine.studycafe.model.pass.StudyCafePassFactory;
 import cleancode.studycafe.mine.studycafe.model.pass.type.StudyCafePassType;
+import cleancode.studycafe.mine.studycafe.parse.FileParser;
 
 public class StudyCafePassParser implements FileParser<StudyCafePass> {
     @Override
